@@ -1,0 +1,15 @@
+public class Solution {
+    public bool IsAnagram(string s, string t) {
+        if (s.Length != t.Length) return false;
+
+        var sCount = new int[26];
+        foreach(var item in s)
+            sCount[item - 'a']++;
+
+        var tCount = new int[26];
+        foreach(var item in t)
+            tCount[item - 'a']++;
+        
+        return sCount.SequenceEqual(tCount);
+    }
+}
